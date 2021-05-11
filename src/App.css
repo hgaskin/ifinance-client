@@ -1,0 +1,39 @@
+.header-title {
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    display: flex;
+}
+.input-search {
+    padding: 10px;
+    margin: 10px 10px;
+    width: 50px;
+}
+.buy-button {
+    color: green;
+    padding: 10px 15px;
+    margin: 5px 5px;
+    background-color: rgb(151, 236, 151);
+}
+.sell-button {
+    color: red;
+    padding: 10px 15px;
+    margin: 5px 5px;
+    background-color: rgb(238, 164, 164);
+}
+.portfolio-button {
+    color: rgb(255, 255, 255);
+    padding: 10px 15px;
+    background-color: rgb(17, 0, 255);
+    margin: 5px 5px;
+}
+
+.visually-hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
