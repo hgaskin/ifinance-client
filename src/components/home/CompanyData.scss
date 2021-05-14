@@ -1,0 +1,58 @@
+@import "../../style/mixins.scss";
+
+.company-LIVE {
+    float: right;
+    position: relative;
+    height: 100%;
+
+    .green-price-div {
+        color: rgb(24, 206, 103);
+        border-radius: 5px;
+        padding: .5rem;
+    }
+    .white-price-div {
+        color: rgb(252, 252, 252);
+        border-radius: 5px;
+        padding: .5rem;
+    }
+    .red-price-div {
+        color: rgb(255, 0, 0);
+        border-radius: 5px;
+        padding: .5rem;
+    }
+}
+
+.company-style {
+    margin: 1.5rem 0;
+    @include card();
+
+    .company-name,
+    .company-symbol,
+    .company-description,
+    .company-price {
+        margin-bottom: 1rem;
+    }
+
+
+.code {
+    font-family: monospace;
+    font-size: 1.3rem;
+}
+
+.btn-edit,
+.btn-delete {
+    @include btn();
+    margin-right: 1rem;
+}
+
+.btn-edit {
+    background: var(--edit-button-color);
+    color: var(--text-light-color);
+}
+
+.btn-delete {
+    background: var(--delete-button-color);
+    color: var(--text-light-color);
+}
+
+}

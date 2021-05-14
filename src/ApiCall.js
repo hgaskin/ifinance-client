@@ -25,22 +25,25 @@ function ApiCall() {
 
     // handleSubmit then takes the handleChange update and updates stockSymbolSearch to the stockSearchQuery input //
     function handleSubmit(event) {
-        if (stockSearchQuery.length > 1) {
+        event.preventDefault();
+
+        if (stockSearchQuery.length > 0) {
             setStockSymbolSearch(stockSearchQuery);
         } 
              
         setStockSearchQuery('');
              
-        event.preventDefault();
     };
 
+    // ======== GET stock data Function from API ==========
     function getStockData() {
 
-        //get stock data from API
         const StockSearch = stockSymbolSearch;
-        const API_KEY = "EFHRQZLWSBDE89TC";
-        const url = `https://www.alphavantage.co/query?function=OVERVIEW&symbol=${StockSearch}&apikey=${API_KEY}`;
-        
+        // const API_KEY = "EFHRQZLWSBDE89TC";
+        // const url = `https://www.alphavantage.co/query?function=OVERVIEW&symbol=${StockSearch}&apikey=${API_KEY}`;
+        // only works when StockSearch = "IBM";
+        const url = `https://www.alphavantage.co/query?function=OVERVIEW&symbol=${StockSearch}&apikey=demo`;
+
        axios.get(`${url}`)
         .then((response) => {
             console.log(response);
@@ -50,26 +53,39 @@ function ApiCall() {
             setStockMarketData(apiStockData);
 
         })
-
         .catch(error => console.error(`Error: ${error}`));
     }
-
 
     return (
         <div>
             <div className="header-title">
-                <h1>Stock Portfolio App</h1>
+                <h1>Company Database Search</h1>
             </div>
-            <input
-                className = "input-search" 
-                type="text"
-                placeholder="Ticker: "
-                value={stockSearchQuery}
-                onChange={handleChange}>
-            </input>
-            <button onClick={handleSubmit}>Search Company Data</button>
-            <p>Symbol Search: {stockSymbolSearch}</p>
+            <div className="search-input-div">
+                <input
+                    className = "input-search" 
+                    type="text"
+                    placeholder="Ticker: "
+                    value={stockSearchQuery}
+                    onChange={handleChange}>
+                </input>
+                <button onClick={handleSubmit}>Search</button>
+            </div>
             
+            <p>Symbol Search: {stockSymbolSearch}</p>
+            <p>**API call frequency is 5 calls per minute and 500 calls per day.</p>
+             
+            {stockMarketData.Note ? 
+                    <div class="alert">
+                        
+                        <strong>Exceeded API Call Limit!</strong> {stockMarketData.Information}
+                    </div>
+                : 
+                    <div class="alert success">
+                          
+                        <strong>Success!</strong> API Call Working.
+                    </div>
+            } 
             <StockDataBox stockdata={stockMarketData}/>
         </div>
     )
@@ -77,4 +93,3 @@ function ApiCall() {
 
 export default ApiCall;
 
-// Alpha advantage API => https://www.alphavantage.co/query?function=OVERVIEW&symbol=SCR&apikey=EFHRQZLWSBDE89TC

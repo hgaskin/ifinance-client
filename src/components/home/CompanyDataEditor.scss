@@ -1,0 +1,50 @@
+@import "../../style/mixins.scss";
+
+.editor-style {
+    @include card();
+    background: var(--editor-background-color);
+    box-shadow: var(--editor-box-shadow);
+    margin-top: 1rem;
+
+    label,
+    input,
+    textarea {
+        display: block;
+    }
+
+    label {
+        margin-bottom: 0.5rem;
+        font-size: 1.1rem;
+        font-weight: bold;
+    }
+    textarea {
+        height:200px;
+        resize: none;
+    }
+
+    input, textarea {
+        margin-bottom: 1rem;
+        padding: 0.3rem 0.5rem;
+        border-radius: 5px;
+        width: 100%;
+        background: var(--dark-background-color);
+
+    }
+
+    .btn-save,
+    .btn-cancel {
+        @include btn();
+        margin-right: 1rem;
+    }
+
+    .btn-save {
+        background: var(--add-button-color);
+        color: var(--text-light-color);
+    }
+
+    .btn-cancel {
+        background: var(--delete-button-color);
+        color: var(--text-light-color);
+    }
+
+}

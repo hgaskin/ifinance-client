@@ -1,0 +1,22 @@
+:root {
+    --primary-color: rgb(0, 7, 37);
+
+    --dark-background-color: rgba(245, 245, 245, 0.082);
+    --light-background-color: rgb(218, 216, 216);
+    --editor-background-color: rgba(245, 245, 245, 0.082);
+
+
+    --text-dark-color: rgb(63, 63, 63);
+    --text-light-color: rgb(214, 214, 214);
+    --text-link-color: rgb(0, 15, 82);
+
+    --edit-button-color: rgb(0, 15, 226);
+    --delete-button-color: red;
+    --search-button-color: white;
+    --add-button-color: rgb(0, 129, 54);
+    
+
+    --box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    --editor-box-shadow: 0 7px 15px rgba(0, 255, 157, 0.63), 0 3px 6px rgba(0, 184, 113, 0.23);
+}
+

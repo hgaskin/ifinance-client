@@ -1,14 +1,12 @@
 import React from "react";
-import ApiCall from "./ApiCall";
-//import YahooAPI from "./YahooAPI";
-
+import Router from "./Router";
+import "./style/index.scss";
 
 function App() {
 
     return (
-        <div>
-            <ApiCall />
-            {/* <YahooAPI /> */}
+        <div className="container">
+            <Router />
         </div>
     );
 }
