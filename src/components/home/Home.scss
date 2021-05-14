@@ -5,4 +5,9 @@
         @include btn();
         background: var(--add-button-color);
     }
+
+    .welcome-text {
+        text-align: center;
+        margin-top: 10rem;;
+    }
 }

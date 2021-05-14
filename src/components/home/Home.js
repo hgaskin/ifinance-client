@@ -1,5 +1,7 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import UserContext from '../../context/UserContext';
 import CompanyData from './CompanyData';
 import CompanyDataEditor from './CompanyDataEditor';
 
@@ -13,9 +15,12 @@ function Home() {
 
     const [editCompanyData, setEditCompanyData] = useState(null);
 
+    const { user } = useContext(UserContext);
+
     useEffect( () => {
-        getCompanyData();
-    }, []);
+        if (!user) setCompanyData([]);
+        else getCompanyData();
+    }, [user]);
 
     // asynchronous request to get stock data from server
     async function getCompanyData() {
@@ -59,7 +64,7 @@ function Home() {
         <div className="home">
             Home Page
             <h1>My Portfolio / Watchlist</h1>
-            {!addCompanyDataOpen && (
+            {!addCompanyDataOpen && user && (
                 <button className="btn-editor-toggle" onClick={() => setCompanyDataOpen(true)}>
                     Add New Company to Portfolio
                 </button>
@@ -72,8 +77,16 @@ function Home() {
                     />
             )}
             
-            
             {mapCompany()}
+                {user === null && (
+                    <div className="welcome-text">
+                        <h2>Welcome to iFinance</h2>
+                        <p>add companies to your watchlist</p>
+                        <div className="welcome-link">
+                        <Link to="/register" style={{color:"blue"}}> Register here</Link>
+                        </div>
+                    </div>
+                )}
         </div>
     )
 }

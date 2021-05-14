@@ -12,9 +12,11 @@ function CompanyData({companyData, getCompanyData, editCompanyDataFunction}) {
     // axios delete request to server with pathname and database _id.
     // refresh function "getCompanyData" called from parent component "Home.js"
     async function deleteCompanyData() {
-        await axios.delete(`http://localhost:5000/stock_data/${companyData._id}`);
+        if (window.confirm("Are you sure you want to remove from watchlist?")) {
+            await axios.delete(`http://localhost:5000/stock_data/${companyData._id}`);
 
-        getCompanyData();
+            getCompanyData();
+        }
     }
 
     return (

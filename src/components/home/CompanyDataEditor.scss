@@ -6,30 +6,6 @@
     box-shadow: var(--editor-box-shadow);
     margin-top: 1rem;
 
-    label,
-    input,
-    textarea {
-        display: block;
-    }
-
-    label {
-        margin-bottom: 0.5rem;
-        font-size: 1.1rem;
-        font-weight: bold;
-    }
-    textarea {
-        height:200px;
-        resize: none;
-    }
-
-    input, textarea {
-        margin-bottom: 1rem;
-        padding: 0.3rem 0.5rem;
-        border-radius: 5px;
-        width: 100%;
-        background: var(--dark-background-color);
-
-    }
 
     .btn-save,
     .btn-cancel {

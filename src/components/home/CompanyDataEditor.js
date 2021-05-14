@@ -60,7 +60,7 @@ function CompanyDataEditor({ getCompanyData, setCompanyDataOpen, editCompanyData
 
     return (
         <div className="editor-style">
-                <form onSubmit={saveCompanyDataToPortolio}>
+                <form className="form" onSubmit={saveCompanyDataToPortolio}>
                         <label htmlFor="company-name">Company Name: </label>
                         <input 
                             id="company-name"

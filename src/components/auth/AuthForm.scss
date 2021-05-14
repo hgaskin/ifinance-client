@@ -1,0 +1,11 @@
+@import "../../style/mixins.scss";
+
+.auth-form {
+    @include card();
+
+    .btn-submit {
+        @include btn();
+        background: var(--add-button-color);
+    }
+
+}

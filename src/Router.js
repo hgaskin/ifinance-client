@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Login from './components/auth/Login';
 import Register from './components/auth/Register';
 import Home from './components/home/Home';
 import Navbar from './navigation/Navbar';
@@ -18,7 +19,7 @@ function Router() {
                 <StockSearchPage />
             </Route>
             <Route path="/login">
-                Login
+                <Login />
             </Route>
             <Route path="/register">
                 <Register />
