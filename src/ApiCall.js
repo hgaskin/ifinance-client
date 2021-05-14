@@ -6,9 +6,9 @@ import "./App.css";
 
 // ======== GET REQUEST to API call ======= //
 function ApiCall() {
-    const [stockMarketData, setStockMarketData] = useState('');
-    const [stockSymbolSearch, setStockSymbolSearch] = useState('');
-    const [stockSearchQuery, setStockSearchQuery] = useState('');
+    const [stockMarketData, setStockMarketData] = useState([]);
+    const [stockSymbolSearch, setStockSymbolSearch] = useState([]);
+    const [stockSearchQuery, setStockSearchQuery] = useState([]);
 
 // useEffect error below, but I only want ApiCall to re render when [stockSymbolSearch] is updated. //
 
