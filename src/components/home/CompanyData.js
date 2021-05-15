@@ -4,6 +4,7 @@ import React from 'react';
 import StockPriceLive from "./StockPriceLive";
 
 import "./CompanyData.scss";
+import domain from '../../util/domain';
 
 function CompanyData({companyData, getCompanyData, editCompanyDataFunction}) {
     
@@ -13,7 +14,7 @@ function CompanyData({companyData, getCompanyData, editCompanyDataFunction}) {
     // refresh function "getCompanyData" called from parent component "Home.js"
     async function deleteCompanyData() {
         if (window.confirm("Are you sure you want to remove from watchlist?")) {
-            await axios.delete(`http://localhost:5000/stock_data/${companyData._id}`);
+            await axios.delete(`${domain}/stock_data/${companyData._id}`);
 
             getCompanyData();
         }

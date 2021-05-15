@@ -3,6 +3,7 @@ import React, { useContext, useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import UserContext from '../../context/UserContext';
 import ErrorMessage from '../../navigation/ErrorMessage';
+import domain from '../../util/domain';
 
 import "./AuthForm.scss";
 
@@ -26,7 +27,7 @@ function Login() {
         }
 
         try {
-            await axios.post("http://localhost:5000/auth/login", loginData);
+            await axios.post(`${domain}/auth/login`, loginData);
         } catch (err) {
             if (err.response) {
                 if (err.response.data.errorMessage) {

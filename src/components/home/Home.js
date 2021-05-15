@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import UserContext from '../../context/UserContext';
+import domain from '../../util/domain';
 import CompanyData from './CompanyData';
 import CompanyDataEditor from './CompanyDataEditor';
 
@@ -24,7 +25,7 @@ function Home() {
 
     // asynchronous request to get stock data from server
     async function getCompanyData() {
-        const stockResponse = await axios.get("http://localhost:5000/stock_data/");
+        const stockResponse = await axios.get(`${domain}/stock_data/`);
         console.log(stockResponse.data);
         setCompanyData(stockResponse.data);
     }

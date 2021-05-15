@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import "./App.css";
+import domain from './util/domain';
 
 
 function StockDataBox({stockdata}) {
@@ -38,7 +39,7 @@ function StockDataBox({stockdata}) {
 	        description: companyDescription ? companyDescription : undefined,
         };
         
-        await axios.post("http://localhost:5000/stock_data/", companyDataFormVersion_2);
+        await axios.post(`${domain}stock_data/`, companyDataFormVersion_2);
     }
 
     

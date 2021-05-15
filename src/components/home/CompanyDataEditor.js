@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from "axios";
 
 import "./CompanyDataEditor.scss";
+import domain from '../../util/domain';
 
 function CompanyDataEditor({ getCompanyData, setCompanyDataOpen, editCompanyData }) {
 
@@ -37,10 +38,10 @@ function CompanyDataEditor({ getCompanyData, setCompanyDataOpen, editCompanyData
         };
         
         if(!editCompanyData) {
-            await axios.post("http://localhost:5000/stock_data/", companyDataForm);
+            await axios.post(`${domain}/stock_data/`, companyDataForm);
         }
         else {
-            await axios.put(`http://localhost:5000/stock_data/${editCompanyData._id}`, companyDataForm);
+            await axios.put(`${domain}/stock_data/${editCompanyData._id}`, companyDataForm);
         }
 
         getCompanyData();
