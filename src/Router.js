@@ -1,12 +1,13 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import ApiCall from './ApiCall';
 import Login from './components/auth/Login';
 import Register from './components/auth/Register';
 import Home from './components/home/Home';
 import Navbar from './navigation/Navbar';
-import StockSearchPage from './StockSearchPage';
 
-//browserrouter links to other pages
+
+// browserrouter links to other pages =========
 function Router() {
     return (
     <BrowserRouter>
@@ -16,7 +17,7 @@ function Router() {
                 <Home />
             </Route>
             <Route path="/stocksearch">
-                <StockSearchPage />
+                <ApiCall />
             </Route>
             <Route path="/login">
                 <Login />
