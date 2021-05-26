@@ -3,6 +3,7 @@ You will have secure login credentials and be able to store your portfolio detai
 
 challenges with this project include:
 - Connecting the server and client to handle CORS requests
+- <img width="1439" alt="Screen Shot 2021-05-26 at 10 58 34 AM" src="https://user-images.githubusercontent.com/37593078/119683234-7b763d00-be11-11eb-96c1-f1284772a64c.png">
 - Managing dual axios requests (mongoDB database, and AlphaAdvantage API)
 - Experimenting with SCSS, vs standard CSS or Bootstrap/Chakra UI stylesheet
 - Hashing Tokens using bcrypt and salt to allow for secure login (IOS prevents cookie storage in its browser and this corrupted any iphone from bypassing /login)
